@@ -6,14 +6,17 @@ import "./index.css";
 
 import App from "./App";
 import { AuthProvider } from "./context/AuthContext";
+import { ThemeProvider } from "./context/ThemeContext";
 import { ToastProvider } from "./components/ToastProvider";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <AuthProvider>
-      <ToastProvider>
-        <App />
-      </ToastProvider>
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <ToastProvider>
+          <App />
+        </ToastProvider>
+      </AuthProvider>
+    </ThemeProvider>
   </BrowserRouter>
 );

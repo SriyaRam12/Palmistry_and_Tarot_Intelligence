@@ -3,6 +3,13 @@
 :root {
   color-scheme: dark light;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #e2e8f0;
+  background-color: #050816;
+}
+
+:root[data-theme="light"] {
+  color: #1f2937;
+  background-color: #f5f3ff;
 }
 
 html {
@@ -12,8 +19,14 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: #f8fafc;
-  color: #0f172a;
+  background: radial-gradient(circle at top, rgba(124, 58, 237, 0.15), transparent 22%), radial-gradient(circle at 85% 10%, rgba(59, 130, 246, 0.12), transparent 14%), linear-gradient(180deg, #020617 0%, #090c1f 55%, #111827 100%);
+  color: #e2e8f0;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+:root[data-theme="light"] body {
+  background: linear-gradient(135deg, #f7f4ff 0%, #eef2ff 45%, #fdf2f8 100%);
+  color: #1f2937;
 }
 
 * {
@@ -21,6 +34,102 @@ body {
 }
 
 ::selection {
-  background: #7c3aed;
+  background: #8b5cf6;
   color: white;
 }
+
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-particles span {
+  position: absolute;
+  border-radius: 9999px;
+  opacity: 0.24;
+  filter: blur(1px);
+  animation: drift 16s infinite ease-in-out alternate;
+}
+
+.hero-particles span:nth-child(1) {
+  width: 160px;
+  height: 160px;
+  background: rgba(99, 102, 241, 0.18);
+  top: 10%;
+  left: 8%;
+}
+
+.hero-particles span:nth-child(2) {
+  width: 120px;
+  height: 120px;
+  background: rgba(59, 130, 246, 0.14);
+  top: 25%;
+  right: 12%;
+}
+
+.hero-particles span:nth-child(3) {
+  width: 80px;
+  height: 80px;
+  background: rgba(236, 72, 153, 0.2);
+  bottom: 18%;
+  left: 18%;
+}
+
+.hero-particles span:nth-child(4) {
+  width: 100px;
+  height: 100px;
+  background: rgba(168, 85, 247, 0.18);
+  bottom: 6%;
+  right: 22%;
+}
+
+@keyframes drift {
+  from {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  to {
+    transform: translateY(-28px) translateX(18px) rotate(12deg);
+  }
+}
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0px) rotate(-2deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.06); }
+}
+
+.card-glass {
+  background: rgba(15, 23, 42, 0.66);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+:root[data-theme="light"] .card-glass {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(129, 140, 248, 0.2);
+}
+
+.palm-hero-art {
+  transform-style: preserve-3d;
+  perspective: 1200px;
+  animation: float-soft 7s ease-in-out infinite;
+}
+
+.palm-hero-art .hand-ring {
+  box-shadow: 0 0 160px rgba(99, 102, 241, 0.24);
+}
+
+.palm-hero-art .line-glow {
+  box-shadow: inset 0 0 45px rgba(96, 165, 250, 0.45);
+}
+
+.palm-badge {
+  animation: pulse-glow 3.2s ease-in-out infinite;
+}
+
