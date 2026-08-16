@@ -54,13 +54,12 @@ numcodecs==0.16.3
 numpy==2.2.6
 opencv-python==4.12.0.88
 opencv-python-headless==4.12.0.88
-packaging==24.1
+packaging>=24.1
 pandas==2.3.3
 partd==1.4.2
 passlib==1.7.4
 pillow==11.3.0
 pockets==0.9.1
-podaac-data-subscriber @ git+https://github.com/podaac/data-subscriber.git@7c3895d973c0d9840476220aab7dc50ad526b130
 progressbar2==4.2.0
 protobuf==6.32.0
 psycopg2-binary==2.9.12
