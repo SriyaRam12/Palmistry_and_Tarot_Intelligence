@@ -260,7 +260,7 @@ const maxFingerLength = Math.max(
                     <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50/80 p-4 dark:border-white/10 dark:bg-slate-950/60">
                       <p className="text-xs uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400">Original palm</p>
                       {summary.originalImage ? (
-                        <img src={`http://127.0.0.1:8000/uploads/${summary.originalImage}`} alt="Original palm" className="mt-4 h-56 w-full rounded-[1.25rem] object-cover" />
+                        <img src={`https://palmistry-tarot-backend-qj0y.onrender.com/uploads/${summary.originalImage}`} alt="Original palm" className="mt-4 h-56 w-full rounded-[1.25rem] object-cover" />
                       ) : (
                         <div className="mt-4 flex h-56 items-center justify-center rounded-[1.25rem] bg-white/70 text-slate-500 dark:bg-slate-900">Unavailable</div>
                       )}
@@ -268,7 +268,7 @@ const maxFingerLength = Math.max(
                     <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50/80 p-4 dark:border-white/10 dark:bg-slate-950/60">
                       <p className="text-xs uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400">Processed scan</p>
                       {summary.processedImage ? (
-                        <img src={`http://127.0.0.1:8000/uploads/${summary.processedImage}`} alt="Processed palm" className="mt-4 h-56 w-full rounded-[1.25rem] object-cover" />
+                        <img src={`https://palmistry-tarot-backend-qj0y.onrender.com/uploads/${summary.processedImage}`} alt="Processed palm" className="mt-4 h-56 w-full rounded-[1.25rem] object-cover" />
                       ) : (
                         <div className="mt-4 flex h-56 items-center justify-center rounded-[1.25rem] bg-white/70 text-slate-500 dark:bg-slate-900">Unavailable</div>
                       )}
@@ -280,7 +280,7 @@ const maxFingerLength = Math.max(
                   <h2 className="text-xl font-semibold">AI scan visualizer</h2>
                   <div className="mt-6 rounded-[1.5rem] border border-slate-200 bg-slate-50/80 p-4 dark:border-white/10 dark:bg-slate-950/60">
                     {summary.lineImage ? (
-                      <img src={`http://127.0.0.1:8000/uploads/${summary.lineImage}`} alt="Detected palm lines" className="w-full rounded-[1.25rem] object-cover" />
+                      <img src={`https://palmistry-tarot-backend-qj0y.onrender.com/uploads/${summary.lineImage}`} alt="Detected palm lines" className="w-full rounded-[1.25rem] object-cover" />
                     ) : (
                       <div className="flex h-72 items-center justify-center rounded-[1.25rem] bg-white/70 text-slate-500 dark:bg-slate-900">No line imagery available</div>
                     )}

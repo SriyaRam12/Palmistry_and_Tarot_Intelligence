@@ -9,7 +9,7 @@ function Tarot() {
     try {
       setLoading(true);
 
-      const res = await axios.get("http://127.0.0.1:8000/tarot/draw");
+      const res = await axios.get("https://palmistry-tarot-backend-qj0y.onrender.com/tarot/draw");
 
       setReading(res.data);
     } catch (err) {
