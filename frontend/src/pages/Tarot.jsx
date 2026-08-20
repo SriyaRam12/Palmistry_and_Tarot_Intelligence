@@ -74,7 +74,7 @@ function Tarot() {
                     <img
                       src="/tarot/card_back.png"
                       alt="Tarot Card Back"
-                      className="mx-auto h-44 w-full rounded-[1.5rem] object-cover"
+                      className="mx-auto h-44 w-full rounded-[1.5rem] object-contain"
                     />
                   </button>
                 ))}
@@ -100,21 +100,18 @@ function Tarot() {
                 <p className="text-sm uppercase tracking-[0.35em] text-slate-400">Card drawn</p>
                 <h2 className="mt-4 text-4xl font-semibold text-white">{reading.card}</h2>
               </div>
-              <div className="mt-8 grid gap-6 sm:grid-cols-2">
+              <div className="mt-8">
                 <div className="rounded-[1.75rem] bg-slate-950/80 p-6 text-slate-300">
                   <p className="text-xs uppercase tracking-[0.35em] text-violet-300">Meaning</p>
                   <p className="mt-3 text-lg leading-7">{reading.meaning}</p>
                 </div>
-                <div className="rounded-[1.75rem] bg-slate-950/80 p-6 text-slate-300">
-                  <p className="text-xs uppercase tracking-[0.35em] text-violet-300">Element</p>
-                  <p className="mt-3 text-lg leading-7">{reading.element || "Mystery"}</p>
-                </div>
+                
               </div>
               <div className="mt-8 text-center">
                 <img
                   src={`/tarot/${reading.image}`}
                   alt={reading.card}
-                  className="mx-auto h-96 w-full max-w-md rounded-[2rem] object-cover shadow-2xl shadow-violet-500/20"
+                  className="mx-auto h-96 w-full max-w-md rounded-[2rem] object-contain shadow-2xl shadow-violet-500/20"
                 />
               </div>
             </div>
