@@ -1,6 +1,10 @@
-from ollama import chat
+from openai import OpenAI
+
+client = OpenAI()
+
 
 def generate_ai_reading(data):
+
     prompt = f"""
 You are a professional palmistry assistant.
 
@@ -32,18 +36,10 @@ Rules:
 - Base every statement only on the provided analysis.
 """
 
-    response = chat(
-        model="llama3.2:1b",
-        messages=[
-            {
-                "role": "user",
-                "content": prompt
-            }
-        ],
-        options={
-            "temperature": 0.4,
-            "num_predict": 300
-        }
+    response = client.responses.create(
+        model="gpt-5.2",
+        input=prompt,
+        text={"verbosity": "low"}
     )
 
-    return response["message"]["content"]
+    return response.output_text
