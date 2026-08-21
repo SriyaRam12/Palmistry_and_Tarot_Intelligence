@@ -17,8 +17,15 @@ def register(
     user: UserCreate,
     db: Session = Depends(get_db)
 ):
-    return create_user(db, user)
-
+    try:
+        return create_user(db, user)
+    except Exception as e:
+        print("REGISTER ERROR:", repr(e))
+        db.rollback()
+        raise HTTPException(
+            status_code=500,
+            detail=str(e)
+        )
 
 @router.post("/login", response_model=Token)
 def login(
