@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-
+import api from "../services/api";
 function Tarot() {
   const [loading, setLoading] = useState(false);
   const [reading, setReading] = useState(null);
@@ -9,7 +9,7 @@ function Tarot() {
     try {
       setLoading(true);
 
-      const res = await axios.get("https://palmistry-tarot-backend-qj0y.onrender.com/tarot/draw");
+      const res = await api.get("/tarot/draw");
 
       setReading(res.data);
     } catch (err) {

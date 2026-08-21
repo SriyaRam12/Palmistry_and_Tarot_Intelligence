@@ -1,7 +1,7 @@
 ﻿import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://palmistry-tarot-backend-qj0y.onrender.com",
+    baseURL: "https://palmistry-tarot-backend-docker.onrender.com",
 });
 
 api.interceptors.request.use((config) => {
